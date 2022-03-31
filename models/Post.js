@@ -16,12 +16,31 @@ Post.init(
       unique: true,
       allowNull: false,
     }, 
-    post_data {
+    post_data: {
       type: DataTypes.STRING,
       unique: true,
       allowNull: false,
     },
-    
+    date_created: {
+      type: DataTypes.DATEONLY,
+      defaultValue: DataTypes.NOW,
+      allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    timestamps: false,
+    underscored: true,
+    modelName: 'post',
+  }
+);
 
-
-module.exports = Project;
+module.exports = Post;
