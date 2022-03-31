@@ -20,7 +20,24 @@ class Comment extends Model {}
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-            }
-         }
+                key: 'id',
+            },
+         },
+         date_created: {
+             type: DataTypes.DATEONLY,
+             defaultValue: DataTypes.NOW,
+             allowNull: false,
+         },
+         post_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'post',
+                key: 'id',
+            },
+        },
+     },
+     {
+         
      }
+
     ) 
