@@ -37,7 +37,12 @@ class Comment extends Model {}
         },
      },
      {
-         
+         sequelize,
+         freezeTableName: true,
+         timestamps: false,
+         underscored: true,
+         modelName: 'comment',
      }
+);
 
-    ) 
+module.exports = Comment;
