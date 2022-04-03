@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     // Serialization of the data
     const posts = postData.map((post) => post.get({ plain: true }));
     // Rendering of posts & location
-    res.render('allposts-loggedin', { posts, logged_in: req.session.logged_in });
+    res.render('homepage', { posts, logged_in: req.session.logged_in });
   } catch (err)  {
     res.status(500).json(err.message);
   }
