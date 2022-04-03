@@ -13,6 +13,16 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  await Post.bulkCreate(postData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  await Comment.bulkCreate(commentData, {
+    individualHooks: true,
+    returning: true,
+  });
+  
   process.exit(0);
 };
 

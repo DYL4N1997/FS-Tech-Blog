@@ -26,11 +26,8 @@
     "sequelize": "^6.17.0"
   },
   "homepage": "https://github.com/DYL4N1997/FS-Tech-Blog#readme",
-  "devDependencies": {
-    "eslint": "^7.12.1",
-    "eslint-config-prettier": "^6.15.0",
-    "prettier": "^2.1.2"
-  },
+  "devDependencies": {},
+  
   "bugs": {
     "url": "https://github.com/DYL4N1997/FS-Tech-Blog/issues"
   }
