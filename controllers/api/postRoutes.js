@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Post a blog post
 router.post('/', withAuth, async (req, res) => {
     const body = req.body;
     try {
@@ -25,5 +26,18 @@ router.post('/', withAuth, async (req, res) => {
      res.status(400).json(err.message);
    }
 });
+
+// Edit a blog post
+router.put('/:id', withAuth, async (req, res) => {
+    const body = req.body
+    try {
+     await Post.update(body, { where: { id: body.id } });
+     res.status(200).render('dashboard', { logged_in: req.session.logged_in });
+   } catch (err) {
+     res.status(500).json(err.message);
+   }
+});
+
+
 
 module.exports = router;
